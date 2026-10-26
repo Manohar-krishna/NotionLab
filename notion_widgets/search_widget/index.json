@@ -1,0 +1,98 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-26T04:33:42.102599+00:00",
+  "source": "notion_widgets",
+  "items": [
+    {
+      "id": "search_widget/README.md",
+      "title": "README.md",
+      "path": "search_widget/README.md",
+      "category": "Documentation",
+      "summary": "# Static file search This project has three independent parts: a file store, an index generator, and a static search interface. The interface only reads `index.json`; it does not need a server-side search service. ## Local folder or synced Google Drive folder Run the indexer from anywhere with Python 3: ```sh python3 search_widget/scan_directory.py --root /path/to/folder --output search_widget/index.json ``` The default scan root is the project root (the parent of `search_widget`) and the defaul",
+      "tags": [
+        "MD"
+      ],
+      "status": "2026-10-26",
+      "mimeType": "text/markdown",
+      "url": "README.md"
+    },
+    {
+      "id": "search_widget/app.js",
+      "title": "app.js",
+      "path": "search_widget/app.js",
+      "category": "Development & Code",
+      "summary": "// Search UI backed by a generated index. Set INDEX_URL to an Apps Script endpoint // before loading this file if the index is served from Google Drive. const INDEX_URL = window.SEARCH_INDEX_URL || new URL(\"index.json\", document.currentScript.src).toString(); const CATEGORY_CLASSES = { \"Architecture & Design\": \"cat-arch\", \"Development & Code\": \"cat-dev\", \"Research & Specs\": \"cat-research\", \"Documentation\": \"cat-personal\", }; let directoryData = []; let activeCategory = \"ALL\"; let searchQuery = \"",
+      "tags": [
+        "JS"
+      ],
+      "status": "2026-10-26",
+      "mimeType": "text/javascript",
+      "url": "app.js"
+    },
+    {
+      "id": "search_widget/config.js",
+      "title": "config.js",
+      "path": "search_widget/config.js",
+      "category": "Development & Code",
+      "summary": "// Leave empty to load the local index.json, or set a published JSON endpoint. // Example: window.SEARCH_INDEX_URL = \"https://script.google.com/macros/s/DEPLOYMENT_ID/exec\"; window.SEARCH_INDEX_URL = \"\"; ",
+      "tags": [
+        "JS"
+      ],
+      "status": "2026-10-26",
+      "mimeType": "text/javascript",
+      "url": "config.js"
+    },
+    {
+      "id": "search_widget/index.html",
+      "title": "index.html",
+      "path": "search_widget/index.html",
+      "category": "Development & Code",
+      "summary": "<!DOCTYPE html> <html lang=\"en\"> <head> <meta charset=\"UTF-8\"> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"> <title>Project File Search</title> <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\"> <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin> <link href=\"https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap\" rel=\"stylesheet\"> <link rel=\"stylesheet\" href=\"style.css\"> </head> <body> <div class=\"search-container\" id=\"",
+      "tags": [
+        "HTML"
+      ],
+      "status": "2026-10-26",
+      "mimeType": "text/html",
+      "url": "index.html"
+    },
+    {
+      "id": "search_widget/scan_directory.py",
+      "title": "scan_directory.py",
+      "path": "search_widget/scan_directory.py",
+      "category": "Development & Code",
+      "summary": "#!/usr/bin/env python3 \"\"\"Build a portable JSON search index for a local folder or synced Drive folder.\"\"\" from __future__ import annotations import argparse import json import mimetypes import os import re from datetime import datetime, timezone from pathlib import Path from urllib.parse import quote IGNORED_DIRS = {\".git\", \".github\", \".venv\", \"venv\", \"node_modules\", \"__pycache__\", \"dist\", \"build\"} TEXT_EXTENSIONS = {\".md\", \".txt\", \".html\", \".htm\", \".css\", \".js\", \".ts\", \".json\", \".py\", \".yml\", ",
+      "tags": [
+        "PY"
+      ],
+      "status": "2026-10-26",
+      "mimeType": "text/x-python",
+      "url": "scan_directory.py"
+    },
+    {
+      "id": "search_widget/style.css",
+      "title": "style.css",
+      "path": "search_widget/style.css",
+      "category": "Development & Code",
+      "summary": ":root { --bg-primary: #191919; --bg-card: #202020; --bg-card-hover: #262626; --bg-input: #252525; --bg-input-focus: #2b2b2b; --border-color: rgba(255, 255, 255, 0.08); --border-focus: rgba(255, 255, 255, 0.22); --text-main: #f3f3f3; --text-secondary: #9b9b9b; --text-muted: #6e6e6e; --accent-blue: #3b82f6; --accent-purple: #a855f7; --accent-green: #22c55e; --accent-amber: #f59e0b; --radius-sm: 6px; --radius-md: 10px; --radius-lg: 14px; --font-family: 'Inter', -apple-system, BlinkMacSystemFont, \"S",
+      "tags": [
+        "CSS"
+      ],
+      "status": "2026-10-26",
+      "mimeType": "text/css",
+      "url": "style.css"
+    },
+    {
+      "id": "search_widget/google_apps_script/Code.gs",
+      "title": "Code.gs",
+      "path": "search_widget/google_apps_script/Code.gs",
+      "category": "General",
+      "summary": "search_widget/google_apps_script/Code.gs · 1.6 KB",
+      "tags": [
+        "GS"
+      ],
+      "status": "2026-10-26",
+      "mimeType": "application/octet-stream",
+      "url": "google_apps_script/Code.gs"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project File Search</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="search-container" id="searchApp">
+    <!-- Header / Brand -->
+    <header class="search-header">
+      <div class="header-badge">
+        <span class="badge-dot"></span>
+        <span class="badge-text">Project Search</span>
+      </div>
+      <h1 class="search-title">Project File Search</h1>
+      <p class="search-subtitle">Search files stored locally, in a synced Drive folder, or in a published index.</p>
+    </header>
+
+    <!-- Search Input Bar -->
+    <div class="search-box-wrapper">
+      <div class="search-input-group">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input 
+          type="text" 
+          id="searchInput" 
+          placeholder="Search by title, keyword, tech stack, or topic... (Press '/' to focus)" 
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <div class="shortcut-pill" id="shortcutHint">/</div>
+        <button class="clear-btn" id="clearBtn" title="Clear search" aria-label="Clear search" style="display: none;">
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Quick Filter Chips -->
+      <div class="filter-chips" id="filterChips">
+        <!-- Categories are generated from index.json. -->
+      </div>
+    </div>
+
+    <!-- Results Status Bar -->
+    <div class="results-meta">
+      <span id="resultsCount">Loading index…</span>
+      <span class="results-tip">Tip: Press <kbd>Esc</kbd> to clear</span>
+    </div>
+    <div class="index-status" id="indexStatus" aria-live="polite">Loading index…</div>
+
+    <!-- Live Results Feed -->
+    <div class="results-list" id="resultsList" role="list">
+      <!-- Dynamic cards rendered by app.js -->
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
